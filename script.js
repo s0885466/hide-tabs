@@ -5,7 +5,7 @@
 * * tabBlock - контейнер внутри которого лежат все linkTabs
 * contents - блоки контента, который мы скрываем по ссылке на определенную linkTabs
 * Соответствующие классы прописаны в css файле
-* 
+*
 * Функции
 * showContent(num) - скрывает все элементы и затем показывет элемент num
 * fadeContent(num) - скрывввает все элементы начиная с номера num
@@ -13,9 +13,9 @@
 * */
 
 window.onload = function () {
-  let tabBlock = document.querySelector('.info-header');
-  let linkTabs = document.querySelectorAll('.info-header-tab');
-  let contents = document.querySelectorAll('.info-tabcontent');
+  let tabBlock = document.querySelector('.info-header'),
+      linkTabs = document.querySelectorAll('.info-header-tab'),
+      contents = document.querySelectorAll('.info-tabcontent');
 
   function fadeContent(num) {
       for (let i = num; i < contents.length; i++){
@@ -23,7 +23,6 @@ window.onload = function () {
           contents[i].classList.add('hide');
       }
   }
-    fadeContent(1);
 
   function showContent(num) {
       fadeContent(0);
@@ -38,5 +37,7 @@ window.onload = function () {
               showContent(i);
           }
         }
-    })
+    });
+
+    fadeContent(1);
 };
